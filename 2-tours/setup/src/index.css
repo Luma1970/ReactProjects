@@ -76,7 +76,6 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
@@ -138,7 +137,7 @@ p {
   display: inline-block;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--clr-white);
   letter-spacing: var(--spacing);
   border-color: transparent;
@@ -200,7 +199,6 @@ main {
 .single-tour button {
   background: transparent;
   border-color: transparent;
-  text-transform: capitalize;
   color: var(--clr-primary-5);
   font-size: 1rem;
   cursor: pointer;
