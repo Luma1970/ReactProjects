@@ -76,7 +76,6 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
@@ -240,7 +239,7 @@ main {
   background: var(--clr-primary-10);
   color: var(--clr-primary-5);
   padding: 0.25rem 0.5rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   border-radius: var(--radius);
   transition: var(--transition);
   border-color: transparent;
