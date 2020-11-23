@@ -7,6 +7,9 @@ const allCategories = ['all', ...new Set(items.map((item)=> item.category))];
 /*
 Creo un nuovo array di categorie con nome unico in modo da non ripetere più volte il btn con lo
 stesso nome di categoria
+1) map - ottengo tutte le istanze
+2) new Set - restringo gli elementi a quelli con nome univoco
+3) ['all', ...] - trasformo l'oggetto che risulta da new Set in un array
 */
 
 function App() {
