@@ -4,7 +4,54 @@ import { links, social } from './data'
 import logo from './logo.svg'
 
 const Navbar = () => {
-  return <h4>navbar</h4>
+  const [menuItems, setMenuItems] = useState(false)
+  const linksContainerRef = useRef(null)
+  const linksRef = useRef(null)
+
+  useEffect(() => {
+    const linksHeight = linksRef.current.getBoundingClientRect().height // metodo per conoscere la posizione di un elemento compreso di padding e bordi nella viewport
+    if (menuItems) {
+      linksContainerRef.current.style.height = `${linksHeight}px`
+    } else {
+      linksContainerRef.current.style.height = '0px'
+    }
+  }, [menuItems])
+
+  return (
+    <nav>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} alt="logo" />
+          <button className="nav-toggle" onClick={(e) => setMenuItems(!menuItems)}>
+            <FaBars />
+          </button>
+        </div>
+        <div className='links-container' ref={linksContainerRef}>
+          <ul className="links" ref={linksRef}>
+            {links.map((link) => {
+              const { id, url, text } = link
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+
+        <ul className="social-icons">
+          {social.map((socialIcon) => {
+            const { id, url, icon } = socialIcon
+            return (
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar
